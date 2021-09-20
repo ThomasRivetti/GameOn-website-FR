@@ -54,14 +54,13 @@ function closeConfirmationModal(){
 }
 
 // checking Input FirstName
-firstNameInput.addEventListener("keyup", function(){
+firstNameInput.addEventListener("blur", function(){
   const firstNameError = document.getElementById("firstNameError");
   if(regexFirstName.test(firstNameInput.value) == false) {
     firstNameError.innerText = "Le Prénom doit faire 2 lettres minimum";
     firstNameError.style.color = "#e54858";
     firstNameError.style.fontSize = "0.7em";
     firstNameInput.parentElement.dataset.errorVisible = "true";
-
   } else {
       firstNameError.innerText = "";
       firstNameInput.parentElement.dataset.errorVisible = "false";
@@ -69,7 +68,7 @@ firstNameInput.addEventListener("keyup", function(){
 })
 
 // checking Input LastName
-lastNameInput.addEventListener("keyup", function(){
+lastNameInput.addEventListener("blur", function(){
   const lastNameError = document.getElementById("lastNameError");
   if(regexLastName.test(lastNameInput.value) == false) {
     lastNameError.innerText = "Le nom doit faire 2 lettres minimum";
@@ -83,7 +82,7 @@ lastNameInput.addEventListener("keyup", function(){
 })
 
 // checking Input Email
-emailInput.addEventListener("keyup", function(){
+emailInput.addEventListener("blur", function(){
   const emailError = document.getElementById("emailError");
   if(regexEmail.test(emailInput.value) == false) {
     emailError.innerText = "L'adresse mail n'est pas valide";
